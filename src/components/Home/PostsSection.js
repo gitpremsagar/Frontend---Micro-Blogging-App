@@ -1,11 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Post from "@/components/Home/Post.js";
-import { POSTS_ENDPOINT } from "@/configs/constants";
-import axios from "axios";
 
-export default function PostsSection() {
+export default function PostsSection({ posts, isLoading, isError, isBlank }) {
   // dummy posts
   // const posts = [
   //   {
@@ -39,29 +36,6 @@ export default function PostsSection() {
   //       "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. In this post, we'll cover the basics of TypeScript and how to get started with it.",
   //   },
   // ];
-
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [isBlank, setIsBlank] = useState(false);
-
-  useEffect(() => {
-    axios
-      .get(POSTS_ENDPOINT)
-      .then((response) => {
-        console.log("Posts fetched:", response.data);
-        if (response.data.length === 0) {
-          setIsBlank(true);
-        }
-        setPosts(response.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsError(true);
-        setIsLoading(false);
-        console.error("Error fetching posts:", error);
-      });
-  }, []);
 
   return (
     <section className="">
