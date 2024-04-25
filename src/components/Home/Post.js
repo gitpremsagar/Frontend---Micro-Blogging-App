@@ -46,7 +46,7 @@ export default function Post({ post }) {
 
   return isEditing ? (
     <EditPostSection
-      key={`write`}
+      key={post._id}
       setIsEditing={setIsEditing}
       title={post.title}
       content={post.content}
@@ -66,13 +66,17 @@ export default function Post({ post }) {
         <p className="mt-2 text-gray-500">{post.content}</p>
         <div>
           <button
-            onClick={handleEditClick}
+            onClick={() => {
+              handleEditClick(post._id);
+            }}
             className="mt-4 mr-4 px-4 py-2 hover:text-white bg-white border border-indigo-600 hover:bg-indigo-800 transition ease-in-out rounded duration-500 "
           >
             Edit
           </button>
           <button
-            onClick={handleDeleteClick}
+            onClick={() => {
+              handleDeleteClick(post._id);
+            }}
             className="mt-4 mr-4 px-4 py-2 hover:text-white bg-white border border-red-600 hover:bg-red-800 transition ease-in-out duration-500 rounded "
           >
             Delete
