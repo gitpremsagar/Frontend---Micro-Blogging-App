@@ -30,6 +30,15 @@ export default function Home() {
       });
   }, []);
 
+  // update isBlank state when posts change
+  useEffect(() => {
+    if (posts.length > 0) {
+      setIsBlank(false);
+    } else {
+      setIsBlank(true);
+    }
+  }, [posts]);
+
   return (
     <>
       <header>

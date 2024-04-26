@@ -7,6 +7,7 @@ export default function PostsSection({
   isLoading,
   isError,
   isBlank,
+  setIsBlank,
   setPosts,
 }) {
   // dummy posts
