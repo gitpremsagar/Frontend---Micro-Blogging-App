@@ -40,7 +40,7 @@ export default function Home() {
   }, [posts]);
 
   return (
-    <main className="min-h-screen ">
+    <main className="min-h-screen p-5">
       <CreatePostSection setPosts={setPosts} />
       <PostsSection
         posts={posts}

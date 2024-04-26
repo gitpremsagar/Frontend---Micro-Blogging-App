@@ -10,7 +10,7 @@ import SocialMediaLink from "./SocialMediaLink";
 export default function WebsiteFooter() {
   const thisYear = new Date().getFullYear();
   return (
-    <footer className="bg-blue-800 text-white py-5">
+    <footer className="bg-blue-800 text-white py-5 px-5">
       {/* social media handles */}
       <section className="max-w-6xl mx-auto p-5">
         <h3 className="text-center">Follow me</h3>
