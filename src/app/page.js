@@ -4,6 +4,7 @@ import PostsSection from "@/components/Home/PostsSection";
 import { useEffect, useState } from "react";
 import { POSTS_ENDPOINT } from "@/configs/constants";
 import axios from "axios";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -56,9 +57,7 @@ export default function Home() {
           setPosts={setPosts}
         />
       </main>
-      <footer className="bg-gray-800 text-white min-h-[200px]">
-        <p>Footer</p>
-      </footer>
+      <Footer />
     </>
   );
 }
