@@ -4,7 +4,6 @@ import PostsSection from "@/components/Home/PostsSection";
 import { useEffect, useState } from "react";
 import { POSTS_ENDPOINT } from "@/configs/constants";
 import axios from "axios";
-import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -41,23 +40,15 @@ export default function Home() {
   }, [posts]);
 
   return (
-    <>
-      <header>
-        <h1 className="bg-blue-500 text-white p-10 text-lg">
-          Welcome to Micro-Blogging App
-        </h1>
-      </header>
-      <main className="min-h-screen ">
-        <CreatePostSection setPosts={setPosts} />
-        <PostsSection
-          posts={posts}
-          isBlank={isBlank}
-          isError={isError}
-          isLoading={isLoading}
-          setPosts={setPosts}
-        />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen ">
+      <CreatePostSection setPosts={setPosts} />
+      <PostsSection
+        posts={posts}
+        isBlank={isBlank}
+        isError={isError}
+        isLoading={isLoading}
+        setPosts={setPosts}
+      />
+    </main>
   );
 }

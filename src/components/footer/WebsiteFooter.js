@@ -1,16 +1,14 @@
-import { useState } from "react";
 import {
   FaYoutube,
   FaGithub,
   FaLinkedin,
   FaTwitter,
-  FaFacebook,
   FaInstagram,
 } from "react-icons/fa";
 import SocialMediaLink from "./SocialMediaLink";
 
-export default function Footer() {
-  const [thisYear, setThisYear] = useState(new Date().getFullYear());
+export default function WebsiteFooter() {
+  const thisYear = new Date().getFullYear();
   return (
     <footer className="bg-blue-800 text-white py-5">
       {/* social media handles */}
