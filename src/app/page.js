@@ -11,6 +11,7 @@ export default function Home() {
   const [isError, setIsError] = useState(false);
   const [isBlank, setIsBlank] = useState(false);
 
+  // get all posts from api
   useEffect(() => {
     axios
       .get(POSTS_ENDPOINT)
@@ -28,6 +29,7 @@ export default function Home() {
         console.error("Error fetching posts:", error);
       });
   }, []);
+
   return (
     <>
       <header>
@@ -42,6 +44,7 @@ export default function Home() {
           isBlank={isBlank}
           isError={isError}
           isLoading={isLoading}
+          setPosts={setPosts}
         />
       </main>
       <footer className="bg-gray-800 text-white min-h-[200px]">

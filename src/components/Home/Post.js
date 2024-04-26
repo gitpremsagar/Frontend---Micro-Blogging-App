@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import EditPostSection from "./EditPostSection";
 
-export default function Post({ post }) {
+export default function Post({ post, setPosts }) {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsEditing(true);
   };
   const handleDeleteClick = () => {
@@ -48,8 +48,8 @@ export default function Post({ post }) {
     <EditPostSection
       key={post._id}
       setIsEditing={setIsEditing}
-      title={post.title}
-      content={post.content}
+      post={post}
+      setPosts={setPosts}
     />
   ) : (
     <article className="max-w-md mx-auto bg-white rounded-xl border-2 border-gray-200 hover:border-gray-300 shadow-md hover:shadow-2xl overflow-hidden md:max-w-2xl m-10 transform hover:scale-110 transition ease-in-out duration-500">

@@ -2,7 +2,13 @@
 
 import Post from "@/components/Home/Post.js";
 
-export default function PostsSection({ posts, isLoading, isError, isBlank }) {
+export default function PostsSection({
+  posts,
+  isLoading,
+  isError,
+  isBlank,
+  setPosts,
+}) {
   // dummy posts
   // const posts = [
   //   {
@@ -53,7 +59,7 @@ export default function PostsSection({ posts, isLoading, isError, isBlank }) {
           </p>
         )}
         {posts.map((post) => (
-          <Post key={post._id} post={post} />
+          <Post key={post._id} post={post} setPosts={setPosts} />
         ))}
       </div>
     </section>
